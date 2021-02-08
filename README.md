@@ -81,26 +81,196 @@ Its Christon Cardoza, Now I'm gona teach you Basics of HTML and CSS Development
 
 ## Property
  1. Should writte in {}
- 2. These are key vaue pait separate by colon ie :
+ 2. These are key value pair separate by colon ie :
 
 ### Color 
  1. color: 
-   * rgb(R,G,B | 0 - 255)
-   * rgba(R,G,B,0 or1)
-   * css named color
+    * rgb(R,G,B | 0 - 255)
+    * rgba(R,G,B,0 or1)
+    * css named color
    * hash code
  2. background:
-   * css named color
-   * hash code 
-   * rgb(R,G,B | 0 - 255)
-   * rgba(R,G,B,0 or1): Opacity or transparency
-   * url()
-   * linear-gradient(to bottom right |`<anglee>`, red,blue)
-   * radial-gradenient(circle, red 20%, blue 40%, green 60%)
+    * css named color
+    * hash code 
+    * rgb(R,G,B | 0 - 255)
+    * rgba(R,G,B,0 or1): Opacity or transparency
+    * url()
+    * linear-gradient(to bottom right |`<angle>`, red,blue)
+    * radial-gradenient(circle, red 20%, blue 40%, green 60%)
  3. background-repeat: 
-   * no-repeat 
-   * repeat
+    * no-repeat 
+    * repeat
  4. background-size:
-   * `<height>px <width>px`
-   * cover
-   * contain
+    * `<height>px <width>px`
+    * cover
+    * contain 
+
+### Text
+ 1. text-decoration: 
+    * underline
+ 2. text-align:
+    * justify
+ 3. font-size:
+    * em
+    * cm
+    * px
+ 4. font-weight:
+ 5. font-family:
+    * `<font_name>,<if first font not found then default font name>`
+  
+## Box Modal
+ 1. The css Box model is a series of positioning properties designed to help with layout.
+ 2. Each peoperty work in a different way, and positioning the item with different spacing.
+ 3. The Box Modek is the most commonly used way to position items.
+ 4. Each layer represent a different part of the model, and it can be strtched and sized either symmetrically or asymetrically
+  <p align="center">
+    <img src="CSS\img\Modal.PNG"> 
+  </p>
+
+## Flex Box
+ 1. Flexbox stands for 'flexible box'
+ 2.  It is a display type that comes with a range of properties allowing you to arrange items easily.
+ 3. It is an alternative to using displays, floats and oter layout properties 
+ 4. A flexbox element is split into two main parts: the container, and the items.
+ 5. The container is the parent element in which the display type is active. This is usually in the form of a div.
+ 6. Flex items are child elemnts of the conatiner, and make up the contents of the box.
+  <p align="center">
+    <img src="CSS\img\Flexbox.PNG"> 
+  </p>
+
+## Grid Box
+ 1. Similarto Flexbox, Gid is a display type that can be used to activate certain layout features on a container element.
+ 2. They are both alternatives to other layout feature avialable in Css
+  <p align="center">
+    <img src="CSS\img\Grid.PNG"> 
+  </p>
+
+### Box
+ 1. border:
+    * `<size> <style> <color>`
+    * Style :- 
+        * solid
+        * dotted
+        * double
+ 2. padding:
+    * padding-right
+    * padding-top
+    * padding -left
+    * padding-bottom
+    * `<top> <right> <bottom> <left>`
+ 3. margin:
+    * `<top-bottom> <left-right>`
+ 4. float:
+    * right
+    * left
+ 5. display:
+    * none
+    * inline
+    * inline-block
+    * flex
+    * grid
+
+### Flex
+ 1. display:flex
+ 2. flex-direction:
+     * column
+     * row
+     * column-reverse
+     * row-reverse
+  3. flex-wrap:
+     * wrap
+     * nowrap
+     * wrap-reverse 
+  4. justify-content:
+     * space-around
+     * space-between
+     * flex-end
+     * center
+  5. align-items:
+     * center
+     * flex-start
+     * flex-end
+     * stretch
+     * baseline 
+  6. flex-grow
+  7. flex-strink
+  8. flex-basis  
+
+### Grid
+ 1. display:grid
+ 2. grid-template-columns: 
+     * `<Column 1 size> <Column 2 size> .... <Column n size>`
+ 3. grid-template-rows: 
+     * `<Row 1 size> <Row 2 size> .... <Row n size>`
+ 4. justify-content:
+     * end
+     * start
+     * space-around
+     * space-evenly
+ 5. align-content:
+     * space-between
+     * space-evenly
+     * center
+     * start
+     * end
+ 6. grid-column-gap: `<size>`
+ 7. grid-row-gap: `<size>`
+ 8. grid-gap: 
+     * `<column gap size> <row gap size>`
+ 9. grid-column:
+     * `<column-start-at>/<column-end-at >` 
+     * 1/3
+     * 1/span 2
+ 10. grid-row:
+     * `<row-start-at>/<row-end-at >` 
+     * 1/3
+     * 1/span 2
+ 11. grid-area:
+     * `<row-start>/<column-start>/<row-end>/<column-end>`
+
+### Transition
+  1. transition:
+     * all
+     * `<where to apply> <property change time> <style of transition> <delay time>`
+         * background
+         * `<seconds or milisecond>`: duration from one property to another
+         * `<ease or linear or ease-in-out>` : tansition style
+         * `<seconds or milisecond>`: delay the peoperty
+   2. transform:
+      * translate(`<x-shilft> <y-shift>`)
+      * scale(`<size-up>`)
+      * rotate(`<angle in deg>`)
+      * skewX(`<angle in deg>`)
+      * skewY(`<angle in deg>`)
+      * matrix(`<x-scale>, <x-skew>, <y-skew>, <y-scale>, <x-translate>, <y-translate>`)
+
+### Animation
+ 1. Creating annimation
+   * ```
+      @Keyframes <name_of_anim> {
+
+         from {.....}
+         to {.....}
+
+            OR
+
+         0% {....}
+         50% {....}
+         100% {....}
+      }
+     ``` 
+ 2. Calling animation
+   * animation-name: 
+      * `<name_of_anim>`
+   * animation-duration: 
+      *  `<duration in seconds>`
+   * animation-timing-function: 
+      *  `<ease or linear or ease-in-out>`
+   * animation-delay: `<duration in seconds>` 
+      * 
+   * animation-iteration-count:  
+      * `<count in number or infinite >`
+   * animation-direction: 
+      *  `<normal or reverse or alternate or alternate-reverse>`
+   * animation:  
+      * `<animation-name> <animation-duration> <animation-timing-function > <animation-delay> <animation-iteration-count> <animation-direction>` 
