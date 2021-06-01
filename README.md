@@ -95,7 +95,7 @@ DOM stands for document object model. When a page is loaded, the browser created
     * `a:visited {}`
 
 ### Advance Selector
- 1. Adjcent sibling: If one selctor directly follows another
+ 1. Adjacent sibling: If one selctor directly follows another
    syntax: `<beforeselctor> + <afterselctor>`   
    Ex : `h2 + a {}`
  2. General sibling: similar to above one but they should share same  parent
@@ -150,17 +150,17 @@ DOM stands for document object model. When a page is loaded, the browser created
          ```
     * background-repeat :
 
-            repeat-x : repeat in the horizontal direction
-            repeat-y : repeat in the vertical direction
-            no-repeat : image not repeat
+            1. repeat-x : repeat in the horizontal direction
+            2. repeat-y : repeat in the vertical direction
+            3. no-repeat : image not repeat
 
     * background-size:
 
-            cover : fits & no empty space remains
-            contain : fits & image is fully visible
-            auto : display in original size
-            {{width}} : set width & height will be set automatically
-            {{width}} {{height}} : set width & height
+            1. cover : fits & no empty space remains
+            2. contain : fits & image is fully visible
+            3. auto : display in original size
+            4. {{width}} : set width & height will be set automatically
+            5. {{width}} {{height}} : set width & height
 
     * background-position : Sets the starting position of a background image.
 
@@ -338,13 +338,10 @@ DOM stands for document object model. When a page is loaded, the browser created
 
          Some of the other font properties are listed below:
 
-         font-size: Sets the size of the font
-
-         font-style: Sets the font style
-
-         font-variant: Sets whether the text is displayed in small-caps
-
-         font-weight: sets the weight of the font
+         1. font-size: Sets the size of the font
+         2. font-style: Sets the font style
+         3. font-variant: Sets whether the text is displayed in small-caps
+         4. font-weight: sets the weight of the font
 
   * Generic Families
 
@@ -365,8 +362,70 @@ DOM stands for document object model. When a page is loaded, the browser created
 4. Demonstrate the difference between display: none and visibility: hidden using a div.
 5. Change the footer to all uppercase in question 1.
 
-https://www.codewithharry.com/videos/css-in-one-video
-## Flex Box
+# Chapter – 5 (Size, Position & Lists)
+There are more units for describing size other than ‘px’. There are rem, em, vw, vh, percentages, etc.
+
+* What’s wrong with pixels?
+
+      Pixels (px) are relative to the viewing device. For a device with the size 1920x1080, 1px is 1unit out of 1080/1920.
+
+* Relative lengths
+
+      These units are relative to the other length property. Following are some of the most commonly used relative lengths,
+
+      1. em – unit relative to the parent font size, em means “my parent element’s font-size”
+      2. rem – unit relative to the root font size (<html> tag)
+      3. vw – unit relative to 1% viewport width
+      4. vh – unit relative to 1% viewport height
+      5. % - unit relative to the parent element
+ 
+* Min/max- height/width property
+
+      CSS has a min-height, max-height, and min-width, max-width property.
+
+      If the content is smaller than the minimum height, minimum height will be applied.
+
+      Similar is the case with other related properties.
+
+* The position property
+
+      Used to manipulate the location of an element. Following are the possible values:
+
+      1. static: The default position. top/bottom/left/right/z-index has no effect
+      2. relative : The top/bottom/left/right/z-index will now work. Otherwise, the element is in the flow of the document like static.
+      3. absolute: The element is removed from the flow and is relatively positioned to its first non-static ancestor. top/bottom etc. works
+      4. fixed: Just like absolute except the element is positioned relative to the browser window
+      5. sticky: The element is positioned based on the user’s scroll position
+ 
+
+* list-style property
+
+      The list-style property is a shorthand for type, position, and image
+
+   ```
+      ul{
+               list-style: square inside url(‘harry.jpg’)
+      }
+
+      /* ‘square’ in the above code is the list-style-type, ‘inside’ is the list-style-position and ‘harry.jpg’ is the list-style-image.  */
+   ```
+
+* z-index property
+
+      The z-index property specifies the stack order of an element. It defines which layer will be above which in case of overlapping elements. 
+
+## Chapter – 5 (Practice Set)
+   1. Create a responsive navbar using relative lengths.
+   2. Create a sticky navbar using the position property.
+   3. Demonstrate the use of list-style property using a ul as an example.
+   4. Demonstrate the use of z-index using an example.
+
+# Chapter – 6 (Flexbox)
+ ```
+   .container{
+          display: flex;  /*Initialize a flexbox*/
+   }
+ ```
  1. Flexbox stands for 'flexible box'
  2.  It is a display type that comes with a range of properties allowing you to arrange items easily.
  3. It is an alternative to using displays, floats and oter layout properties 
@@ -377,141 +436,227 @@ https://www.codewithharry.com/videos/css-in-one-video
     <img src="CSS\img\Flexbox.PNG"> 
   </p>
 
-## Grid Box
- 1. Similarto Flexbox, Gid is a display type that can be used to activate certain layout features on a container element.
- 2. They are both alternatives to other layout feature avialable in Css
+  * The float property
+
+         float property is simple. It just flows the element towards left/right 
+
+  * The clear property
+     
+         Used to clear the float. It specifies what elements can float beside a given element 
+
+  * flex-direction property
+         
+        Defines the direction towards which items are laid. Can be row (default), row-reverse, column and column-reverse
+
+   * Flex properties for parent (flex container)
+
+         1. flex-wrap: Can be wrap, nowrap, wrap-reverse. Wrap items as needed with this property
+         2. justify-content: Defines alignment along the main axis
+         3. align-items: Defines alignment along the cross axis
+         4. align-content: Aligns a flex container’s lines when there is extra space in the cross axis
+   
+   * Flex properties for the children (flex items)
+
+         1. order: Controls the order in which the items appear in the flex container
+         2. align-self: Allows default alignment to be overridden for the individual flex items
+         3. flex-grow: Defines the ability for a flex item to grow
+         4. flex-shrink: Specifies how much a flex item will shrink relative to the rest of the flex items
+
+## Chapter – 6 (Practice Set)
+
+   1. Create a layout of your choice using float.
+   2. Create the same layout in question 1 using flexbox.
+   3. Create the following navigation bar using flexbox
+   4. Create the following layout using flexbox,
+
+
+# Chapter – 7 (CSS Grid & Media Queries)
+ 1. Similar to Flexbox, Gid is a display type that can be used to activate certain layout features on a container element.
+ 2. They are both alternatives to other layout feature available in CSS
+ 3. All direct children automatically become grid items
   <p align="center">
     <img src="CSS\img\Grid.PNG"> 
   </p>
 
-### Box
- 1. border:
-    * `<size> <style> <color>`
-    * Style :- 
-        * solid
-        * dotted
-        * double
- 2. padding:
-    * padding-right
-    * padding-top
-    * padding -left
-    * padding-bottom
-    * `<top> <right> <bottom> <left>`
- 3. margin:
-    * `<top-bottom> <left-right>`
- 4. float:
-    * right
-    * left
- 5. display:
-    * none
-    * inline
-    * inline-block
-    * flex
-    * grid
+  * The grid-column-gap property
+   
+         Used to adjust the space between the columns of a CSS grid 
 
-### Flex
- 1. display:flex
- 2. flex-direction:
-     * column
-     * row
-     * column-reverse
-     * row-reverse
-  3. flex-wrap:
-     * wrap
-     * nowrap
-     * wrap-reverse 
-  4. justify-content:
-     * space-around
-     * space-between
-     * flex-end
-     * center
-  5. align-items:
-     * center
-     * flex-start
-     * flex-end
-     * stretch
-     * baseline 
-  6. flex-grow
-  7. flex-strink
-  8. flex-basis  
+  * The grid-row-gap property
 
-### Grid
- 1. display:grid
- 2. grid-template-columns: 
-     * `<Column 1 size> <Column 2 size> .... <Column n size>`
- 3. grid-template-rows: 
-     * `<Row 1 size> <Row 2 size> .... <Row n size>`
- 4. justify-content:
-     * end
-     * start
-     * space-around
-     * space-evenly
- 5. align-content:
-     * space-between
-     * space-evenly
-     * center
-     * start
-     * end
- 6. grid-column-gap: `<size>`
- 7. grid-row-gap: `<size>`
- 8. grid-gap: 
-     * `<column gap size> <row gap size>`
- 9. grid-column:
-     * `<column-start-at>/<column-end-at >` 
-     * 1/3
-     * 1/span 2
- 10. grid-row:
-     * `<row-start-at>/<row-end-at >` 
-     * 1/3
-     * 1/span 2
- 11. grid-area:
-     * `<row-start>/<column-start>/<row-end>/<column-end>`
+         Used to adjust the space between the rows of a CSS grid
 
-### Transition
-  1. transition:
-     * all
-     * `<where to apply> <property change time> <style of transition> <delay time>`
-         * background
-         * `<seconds or milisecond>`: duration from one property to another
-         * `<ease or linear or ease-in-out>` : tansition style
-         * `<seconds or milisecond>`: delay the peoperty
-   2. transform:
-      * translate(`<x-shilft> <y-shift>`)
-      * scale(`<size-up>`)
-      * rotate(`<angle in deg>`)
-      * skewX(`<angle in deg>`)
-      * skewY(`<angle in deg>`)
-      * matrix(`<x-scale>, <x-skew>, <y-skew>, <y-scale>, <x-translate>, <y-translate>`)
+  * The grid-gap property
+   
+         .container {
+                  display: grid;
+                  grid-gap: 40px 100px;            /*40px for row and 100px for column*/
+                  /* For a single value of grid-gap, both row and column gaps can be set in one value. */
+               }
+  
+  *  properties for grid container:
 
-### Animation
- 1. Creating annimation
-   * ```
-      @Keyframes <name_of_anim> {
+         1. The grid-template-columns property can be used to specify the width of columns
 
-         from {.....}
-         to {.....}
+         .container {
+                  display: grid;
+                  grid-template-columns: 80px 120px auto;
+         }
 
-            OR
+         2. The grid-template-rows property can be used to specify the height of each row
 
-         0% {....}
-         50% {....}
-         100% {....}
-      }
-     ``` 
- 2. Calling animation
-   * animation-name: 
-      * `<name_of_anim>`
-   * animation-duration: 
-      *  `<duration in seconds>`
-   * animation-timing-function: 
-      *  `<ease or linear or ease-in-out>`
-   * animation-delay: `<duration in seconds>` 
-      * 
-   * animation-iteration-count:  
-      * `<count in number or infinite >`
-   * animation-direction: 
-      *  `<normal or reverse or alternate or alternate-reverse>`
-   * animation:  
-      * `<animation-name> <animation-duration> <animation-timing-function > <animation-delay> <animation-iteration-count> <animation-direction>` 
+         .container {
+                  display: grid;
+                  grid-template-rows: 70px 150px;
+         }
 
+         3. The justify-content property is used to align the whole grid inside the container.
+         4. The align-content property is used to vertically align the whole grid inside the container.  
 
+   * Following are the properties for grid item:
+
+         1. The grid-column property defines how many columns an items will span. 
+          
+         .grid-item{
+                  grid-column: 1/5;
+         }
+
+         2. The grid-row property defines how many rows an item will span.
+         3. We can make an item to start on column 1 and space 3 columns like this:
+        
+         .item{
+                  grid-column: 1/span 3;
+         }
+         
+
+   * CSS Media Queries
+
+         Used to apply CSS only when a certain condition is true.
+         Syntax:
+
+         @media only screen and (max-width: 800px) {
+                           body{
+                                    background: red;
+                                    }
+                  }
+ 
+## Chapter – 7 (Practice Set)
+
+1. Create a header with content using CSS grid.
+2. Create the layouts created in chapter-6 practice set using CSS grid.
+3. Create a webpage that is green on large devices, red on medium, and yellow on small devices.
+
+# Chapter – 8 (Transforms, Transitions & Animations)
+
+ 1. CSS Transforms
+  
+         Transforms are used to rotate, move, skew or scale elements. They are used to create a 3-D effect.
+
+         * The transform property
+               Used to apply a 2-D or 3-D transformation to an element
+
+         * The transform-origin property
+               Allows to change the position of transformed elements.
+               2D transforms – can change x & y-axis.3D transforms – can change Z-axis as well 
+
+               CSS 2D transform methods
+               
+               1. scaleX()
+               2. scaleY()
+               3. scale()
+               4. translate(`<x-shilft> <y-shift>`)
+               5. scale(`<size-up>`)
+               6. rotate(`<angle in deg>`)
+               7. skewX(`<angle in deg>`)
+               8. skewY(`<angle in deg>`)
+               9. matrix(`<x-scale>, <x-skew>, <y-skew>, <y-scale>, <x-translate>, <y-translate>`)
+               
+
+               CSS 3D transform methods
+
+               1. rotateX()
+               2. rotateY()
+               3. rotateZ()
+         
+
+ 2. CSS Transitions
+
+         Used to change property values smoothly, over a given duration.
+
+         * The transition property
+               The transition property is used to add a transition in CSS.
+
+         * Following are the properties used for CSS transition:
+               1. transition-property: The property you want to transition
+               2. transition-duration: Time for which you want the transition to apply
+               3. transition-timing-function: How you want the property to transition
+               4. transition-delay: Specifies the delay for the transition
+               5. All these properties can be set using a single shorthand property
+                     transition: property duration timing-function delay;
+                     transition: width 35 ease-in 25;
+               6. Transitioning multiple properties
+                     We can transition multiple properties as follows:
+                     transition: opacity 15 ease-out 15, transform 25 ease-in;
+ 
+
+1. CSS Animations
+
+         Used to animate CSS properties with more control. We can use the @keyframes rule to change the animation from a given style to a new style.
+
+            @keyframes harry {
+                     from { width: 20px; }              /*Can change multiple properties*/
+                     to { width: 31px; }
+            }
+
+         Properties to add Animations
+            1. animation-name: name of the animation
+            2. animation-duration: how long does the animation run?
+            3. animation-timing-function: determines speed curve of the animation
+            4. animation-delay: delay for the start of an animation
+            5. animation-iteration-count: number of times an animation should run
+            6. animation-direction: specifies the direction of the animation
+ 
+            * animation-name: 
+                 `<name_of_anim>`
+            * animation-duration: 
+                 `<duration in seconds>`
+            * animation-timing-function: 
+                 `<ease or linear or ease-in-out>`
+            * animation-delay: 
+                 `<duration in seconds>`  
+            * animation-iteration-count:  
+                 `<count in number or infinite >`
+            * animation-direction: 
+                 `<normal or reverse or alternate or alternate-reverse>`
+            * animation:  
+                 `<animation-name> <animation-duration> <animation-timing-function > <animation-delay> <animation-iteration-count> <animation-direction>` 
+
+         Animation Shorthand
+            All the animation properties from 1-6 can be applied like this:
+               animation: harry 65 linear 15 infinite reverse;
+ 
+            Using percentage value states with animation.We can use % values to indicate what should happen when a certain percent of animation is completed
+
+               @keyframes harry {
+                        0% {
+                                 width: 20px;
+                                 }
+                        50% {
+                                 width: 80px;
+                                 }
+                        100% {
+                                 width: 200px;
+                                 }
+                        }
+               Can add as many intermediate properties as possible
+ 
+
+## Chapter – 8 (Practice Set)
+1. Create a thin progress bar animation for a website.
+2. Create the same progress bar using transition.
+3. Create a rotating image animation using CSS.
+4. Create a slider with 3 images using CSS.
+ 
+
+# Project-1 E-Commerce Website
+Create a homepage for an E-commerce website. Use media queries to make it responsive.
