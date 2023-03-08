@@ -13,6 +13,8 @@
 
         - Paragraph: 1.6
 
+        - Large: 1.8
+
     - Font Weights:
 
         - Default: 400 
@@ -81,6 +83,7 @@
 html {
   /* 10px / 16px = 62.5% ie 1rem = 16px */
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -88,6 +91,9 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+
+  /* Works only if there is nothing absolutely positioned in relateion to body */
+  overflow-x: hidden;
 }
 
 /*********************************************************/
@@ -263,6 +269,7 @@ strong {
 
 .list-item {
   font-size: 1.8rem;
+  line-height: 1.2;
 
   display: flex;
   align-items: center;
