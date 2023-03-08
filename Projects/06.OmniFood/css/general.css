@@ -84,6 +84,8 @@ html {
   /* 10px / 16px = 62.5% ie 1rem = 16px */
   font-size: 62.5%;
   overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
 
 body {
